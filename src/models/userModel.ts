@@ -12,7 +12,7 @@ const create = async ({ username, password, level, classe }: UserInterface) => {
   return rows;
 };
 
-const find = async (username: string, password: string): Promise<any> => {
+const find = async (username: string, password: string) => {
   const query = `
     SELECT * FROM Trybesmith.Users
     WHERE username = ? AND password = ?
