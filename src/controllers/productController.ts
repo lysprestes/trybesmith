@@ -19,4 +19,9 @@ const createProduct = async (req: Request, res: Response) => {
   res.status(201).json(newProduct);
 };
 
-export default { validateToken, createProduct };
+const getAllProducts = async (req: Request, res: Response) => {
+  const allProducts = await productService.getAll();
+  res.status(200).json(allProducts);
+};
+
+export default { validateToken, createProduct, getAllProducts };

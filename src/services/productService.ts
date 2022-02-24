@@ -26,6 +26,13 @@ const create = async (product: ProductInterface) => {
   };
 };
 
+const getAll = async () => {
+  const getAllProducts = await productModel.getAllProducts();
+  console.log('***ALL PRODUCTS*** --->', getAllProducts);
+  return getAllProducts;
+};
+
 export default {
   create,
+  getAll,
 };

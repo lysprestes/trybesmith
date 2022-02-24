@@ -13,4 +13,13 @@ const create = async ({ name, amount }: ProductInterface) => {
   return data;
 };
 
-export default { create };
+const getAllProducts = async () => {
+  const query = `
+    SELECT * FROM Trybesmith.Products
+  `;
+  const [rows] = await connection.query<ResultSetHeader>(query);
+  const data = JSON.parse(JSON.stringify(rows));
+  return data;
+};
+
+export default { create, getAllProducts };
